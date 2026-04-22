@@ -9,6 +9,8 @@ use std::time::Duration;
 const AUTH_TOKEN: &str = "ENSPD2026";
 const PORT: u16 = 7878;
 
+// Important : la machine admin et les agents doivent etre sur le meme reseau local.
+
 // Liste statique des machines — à remplir avec les IPs des PC étudiants
 // En cours : chaque étudiant communique son IP via `ipconfig`
 fn machines() -> HashMap<String, String> {
@@ -167,6 +169,8 @@ fn print_menu() {
 }
 
 fn main() {
+    println!("La machine admin doit etre connectee au meme reseau local que les agents.");
+    println!("Renseigne dans machines() les vraies IP des PC a superviser.\n");
     print_menu();
 
     let machines_list = machines();
